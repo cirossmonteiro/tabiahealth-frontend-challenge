@@ -17,7 +17,7 @@ const Table = (props: IProps) => {
           <tr>
             <th>here</th>
             {categories.map(category => (
-              <th><div className="category">{category}</div></th>
+              <th><div className="category d-flex justify-content-center align-items-center">{category}</div></th>
             ))}
           </tr>
         </thead>
@@ -26,7 +26,12 @@ const Table = (props: IProps) => {
             <tr>
               <th>{countries[index]}</th>
               {country.map(grade => (
-                <td><Grade value={grade}>{grade.toFixed(1)}</Grade></td>
+                <td>
+                  <Grade value={grade}
+                    className="d-flex justify-content-center align-items-center">
+                    {grade.toFixed(1)}
+                  </Grade>
+                </td>
               ))}
             </tr>
           ))}

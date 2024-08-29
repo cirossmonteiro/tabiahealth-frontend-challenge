@@ -5,14 +5,40 @@
     margin: auto;
     overflow: auto;
     height: 350px;
+    
+    table {
+        td, th {
+            // padding: 2px;
+        }
+        td {
+            min-width: 45px;
+            height: 35px;
+            div {
+                height: 100%;
+            }
+        }
+    }
+    // table {
+    //     border-spacing: 10px;
+    //     td, th {
+    //         padding: 2px;
+    //         div {
+    //             padding: 5px;
+    //         }
+    //     }
+    // }
 }
 
 .main thead th {
-    background: blue;
+    div {
+        width: 100%;
+        background: blue;
+    }
     color: #fff;
     
     position: sticky;
     top: 0;
+
 }
 
 .category {
