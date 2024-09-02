@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders learn react link 1`] = `
+<div
+  className="main d-flex"
+>
+  <table>
+    <thead>
+      <tr>
+        <th
+          className="d-flex justify-content-center teams-sort"
+        >
+          <div
+            className="d-flex"
+          >
+            Teams
+            <div
+              className="ms-1"
+            >
+              <i
+                className="fa-solid fa-sort"
+                data-testid="sort-icon"
+                onClick={[Function]}
+              />
+            </div>
+          </div>
+        </th>
+        <th
+          className="category"
+        >
+          <div
+            className="holder2 d-flex justify-content-center align-items-center"
+          >
+            <i
+              className="mb-2 fa-solid fa-house"
+            />
+            category
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th
+          className="country"
+        >
+          <div
+            className="p-2 d-flex justify-content-center align-items-center"
+          >
+            All teams
+          </div>
+        </th>
+        <td>
+          <div
+            className="sc-braxZu iumnsd d-flex justify-content-center align-items-center"
+            value={10}
+          >
+            10.0
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th
+          className="country"
+        >
+          <div
+            className="p-2 d-flex justify-content-center align-items-center"
+          >
+            country
+          </div>
+        </th>
+        <td>
+          <div
+            className="sc-braxZu iumnsd d-flex justify-content-center align-items-center"
+            value={10}
+          >
+            10.0
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
