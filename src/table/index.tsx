@@ -76,11 +76,11 @@ const Table = (props: IProps) => {
                   Teams
                   <div className="ms-1">
                     {sort === -1 && <i className="fa-solid fa-sort-down"
-                      onClick={_ => setSort(0)}/>}
+                      data-testid="sort-icon" onClick={_ => setSort(0)}/>}
                     {sort === 0 && <i className="fa-solid fa-sort"
-                      onClick={_ => setSort(1)}/>}
+                      data-testid="sort-icon" onClick={_ => setSort(1)}/>}
                     {sort === 1 && <i className="fa-solid fa-sort-up"
-                      onClick={_ => setSort(-1)}/>}
+                      data-testid="sort-icon" onClick={_ => setSort(-1)}/>}
                   </div>
               </div>
             </th>
