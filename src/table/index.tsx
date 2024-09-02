@@ -108,7 +108,7 @@ const Table = (props: IProps) => {
               </th>
               {country.map((grade, index) => (
                 <td key={index}>
-                  <Grade value={grade}
+                  <Grade value={parseInt(grade.toFixed(1))}
                     className="d-flex justify-content-center align-items-center">
                     {grade.toFixed(1)}
                   </Grade>
