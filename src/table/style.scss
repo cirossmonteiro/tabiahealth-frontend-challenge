@@ -1,16 +1,11 @@
 .main {
     position: relative;
     width:100%;
-    // z-index: 1;
     margin: auto;
     overflow: auto;
     max-height: 590px;
     
     table {
-        // border-spacing: 10px;
-        td, th {
-            // padding: 2px;
-        }
         td {
             min-width: 45px;
             height: 35px;
@@ -21,15 +16,6 @@
 
         
     }
-    // table {
-    //     border-spacing: 10px;
-    //     td, th {
-    //         padding: 2px;
-    //         div {
-    //             padding: 5px;
-    //         }
-    //     }
-    // }
 }
 
 .holder {
@@ -83,11 +69,9 @@
 
 
 tbody th:first-child {
-    
     position: sticky;
     left: 0;
     z-index: 2;
-    // background: green;
 }
 
 thead th:first-child {
@@ -106,7 +90,6 @@ tbody tr:first-child th:first-child {
     padding: 0;
     div {
         background: #F8F8F8 !important;
-        // background: red !important;
         height: 33px;
     }
 }

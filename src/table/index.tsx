@@ -88,11 +88,7 @@ const Table = (props: IProps) => {
               <th className="category" key={category.name}>
                 <div className="holder2 d-flex justify-content-center align-items-center">
                 <i className={`mb-2 fa-${category.icon[0]} fa-${category.icon[1]}`} />
-                {/* <div className="holder">
-                  <div className="category d-flex justify-content-center align-items-center"> */}
-                    {category.name}
-                  {/* </div>
-                </div> */}
+                  {category.name}
                 </div>
               </th>
             ))}

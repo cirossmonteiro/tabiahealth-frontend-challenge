@@ -4,8 +4,7 @@ import "./style.scss";
 interface ILink {
   path: string;
   label: string;
-  // render: any; // to-do: set type
-  icon?: any; // to-do: set type
+  icon?: [string, string];
   children?: ILink[];
 }
 

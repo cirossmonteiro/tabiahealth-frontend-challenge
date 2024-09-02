@@ -16,12 +16,6 @@ function App() {
 
   return (
     <div className="h-100 d-flex flex-column">
-      {/* <input type="number" value={countries}
-        onChange={e => setCountries(parseInt(e.target.value))}/>
-      <br />
-      <input type="number" value={categories}
-        onChange={e => setCategories(parseInt(e.target.value))}/>
-      <br /> */}
       <header className="p-3 d-flex">
         <i className="fa-solid fa-bars d-flex align-items-center"
           onClick={_ => setShowSidebar(v => !v)}/>
