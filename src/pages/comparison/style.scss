@@ -1,5 +1,6 @@
 .page {
     background: #F8F8F8;
+    height: 100%;
 
     .page-title {
         font-size: 30px;
@@ -7,6 +8,7 @@
     }
 
     .page-body {
+        height: calc(100% - 50px);
         background: white;
     }
 }
