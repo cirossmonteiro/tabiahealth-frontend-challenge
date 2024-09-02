@@ -9,6 +9,12 @@ const randomElement = (arr = []) => {
   return arr[Math.round(Math.random()*(arr.length-1))];
 }
 
+// source: https://stackoverflow.com/a/46545530
+const shuffleArray = (arr = []) => 
+  arr.map(value => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value);
+
 const ICONS = {
   solid: [
     "comment",
@@ -36,6 +42,8 @@ const obj = {
 for (let country = 0; country < COUNTRIES; country++) {
   obj.countries.push(`Country ${country}`);
 }
+
+// obj.countries = shuffleArray(obj.countries); // optional test
 
 for (let category = 0; category < CATEGORIES; category++) {
   obj.categories.push({

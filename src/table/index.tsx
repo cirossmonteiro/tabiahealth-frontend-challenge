@@ -5,6 +5,28 @@ import { Grade } from "./styled";
 const avg = (arr: number[]) => arr
   .reduce((pv, cv) => pv+cv/arr.length, 0);
 
+const swap = (mat: number[][], arr: string[], i: number, j: number): [number[][], string[]] => {
+  const arrTemp = arr[i], matTemp = mat[i];
+
+  arr[i] = arr[j];
+  arr[j] = arrTemp;
+
+  mat[i] = mat[j];
+  mat[j] = matTemp;
+
+  return [mat, arr];
+}
+
+// source: https://en.wikipedia.org/wiki/Insertion_sort#Algorithm
+const insertionSort = (mat: number[][], arr: string[]): [number[][], string[]] => {
+  for(let i = 0; i < arr.length; i++) {
+    for (let j = i; j > 0 && arr[j-1] > arr[j]; j--) {
+      [mat, arr] = swap(mat, arr, j, j-1);
+    }
+  }
+  return [mat, arr];
+}
+
 export interface ICategory {
   name: string;
   icon: [string, string];
@@ -20,6 +42,18 @@ const Table = (props: IProps) => {
   let { countries, categories, data } = props;
   const [sort, setSort] = useState<-1 | 0 | 1>(0);
 
+  // making a local copy
+  [data, countries] = [data.slice(), countries.slice()];
+
+  if (sort !== 0) {
+    [data, countries] = insertionSort(data, countries);
+  }
+  
+  if (sort === -1) {
+    data.reverse();
+    countries.reverse();
+  }
+
   data = [
     categories.map((_, category) => avg(
       countries.map((_, country) => data[country][category])
@@ -31,8 +65,6 @@ const Table = (props: IProps) => {
     "All teams",
     ...countries
   ];
-  // countries.unshift("All teams");
-  console.log(9, { countries, categories, data });
 
   return (
     <div className="main">
