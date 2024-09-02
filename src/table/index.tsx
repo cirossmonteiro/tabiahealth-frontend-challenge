@@ -67,7 +67,7 @@ const Table = (props: IProps) => {
   ];
 
   return (
-    <div className="main d-flex justify-content-center">
+    <div className="main d-flex">
       <table>
         <thead>
           <tr>
