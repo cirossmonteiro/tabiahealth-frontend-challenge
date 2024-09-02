@@ -48,4 +48,4 @@ obj.countries.forEach(_ => {
   obj.data.push(obj.categories.map(_ => Math.random()*10));
 });
 
-fs.writeFileSync('./data.json', JSON.stringify(obj));
+fs.writeFileSync('./data.json', JSON.stringify(obj, null, 2));

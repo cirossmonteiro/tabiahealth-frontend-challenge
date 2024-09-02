@@ -18,6 +18,8 @@
                 height: 100%;
             }
         }
+
+        
     }
     // table {
     //     border-spacing: 10px;
@@ -54,9 +56,14 @@
         background: blue;
         
     }
-    // color: #fff;
     
-    
+    &.teams-sort {
+        top: 100%;
+        i {
+            color: #2678FF;
+            cursor: pointer;
+        }
+    }
 
 }
 

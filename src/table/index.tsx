@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./style.scss";
 import { Grade } from "./styled";
 
@@ -17,12 +18,15 @@ interface IProps {
 
 const Table = (props: IProps) => {
   let { countries, categories, data } = props;
+  const [sort, setSort] = useState<-1 | 0 | 1>(0);
+
   data = [
     categories.map((_, category) => avg(
       countries.map((_, country) => data[country][category])
     )),
     ...data
   ];
+  
   countries = [
     "All teams",
     ...countries
@@ -35,7 +39,19 @@ const Table = (props: IProps) => {
       <table>
         <thead>
           <tr>
-            <th></th>
+            <th className="d-flex justify-content-center teams-sort">
+                <div className="d-flex">
+                  Teams
+                  <div className="ms-1">
+                    {sort === -1 && <i className="fa-solid fa-sort-down"
+                      onClick={_ => setSort(0)}/>}
+                    {sort === 0 && <i className="fa-solid fa-sort"
+                      onClick={_ => setSort(1)}/>}
+                    {sort === 1 && <i className="fa-solid fa-sort-up"
+                      onClick={_ => setSort(-1)}/>}
+                  </div>
+              </div>
+            </th>
             {categories.map(category => (
               <th className="category" key={category.name}>
                 <div className="holder2 d-flex justify-content-center align-items-center">
