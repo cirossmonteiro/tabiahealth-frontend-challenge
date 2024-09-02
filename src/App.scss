@@ -1,0 +1,19 @@
+header {
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.1);
+    z-index: 0;
+
+    i {
+        height: 48px;
+        font-size: 23px;
+        color: #909196;
+        cursor: pointer;
+    }
+
+    .logo {
+        color: #2678FF;
+        font-size: 30px;
+        font-weight: bold;
+    }
+}

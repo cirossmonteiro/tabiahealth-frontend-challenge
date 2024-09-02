@@ -7,6 +7,7 @@
     height: 350px;
     
     table {
+        // border-spacing: 10px;
         td, th {
             // padding: 2px;
         }
@@ -29,36 +30,57 @@
     // }
 }
 
+.holder {
+    background: red;
+    min-width: 100%;
+}
+
+.holder2 {
+    background: #F8F8F8;
+    width: 43px;
+    padding: 10px 0;
+    font-weight: normal;
+}
+
+.country {
+    font-weight: normal;
+}
+
 .main thead th {
-    div {
-        width: 100%;
-        background: blue;
-    }
-    color: #fff;
-    
     position: sticky;
     top: 0;
+    .category {
+        width: 100%;
+        background: blue;
+        
+    }
+    // color: #fff;
+    
+    
 
 }
 
-.category {
-    // background: red;
+.category {    
     writing-mode:vertical-rl;
     transform: rotate(-180deg);
     white-space: nowrap;
-    // margin-left: 10px;
+
+    // prevent rotation of icon
+    i {
+        color: #BFC7D0;
+        transform: rotate(180deg);
+    }
 }
 
 
 
 
-
-th:first-child {
+tbody th:first-child {
     
     position: sticky;
     left: 0;
     z-index: 2;
-    background: green;
+    // background: green;
 }
 
 thead th:first-child {
@@ -67,4 +89,17 @@ thead th:first-child {
 
 tbody th {
     white-space: nowrap;
+}
+
+tbody tr:first-child th:first-child {
+    font-weight: 600;
+}
+
+.country {
+    padding: 0;
+    div {
+        background: #F8F8F8 !important;
+        // background: red !important;
+        height: 33px;
+    }
 }

@@ -2,30 +2,74 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.scss';
 import Table from './table';
+import Sidebar from './sidebar';
+import { Outlet } from 'react-router-dom';
+import Comparison from "./pages/comparison";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+
+
+// https://stackoverflow.com/questions/71201741/how-to-use-font-awesome-6-icons
 
 function App() {
-  const [countries, setCountries] = useState(50);
-  const [categories, setCategories] = useState(100);
-
-  const countriesData = Array(countries).fill(null)
-  .map((_, index) => `Country ${index}`);
-
-  const categoriesData = Array(categories).fill(null)
-  .map((_, index) => `Category ${index}`);
-
-  const data = Array(countries).fill(null)
-  .map(_ => Array(categories).fill(null)
-  .map(_ => Math.random()*10));
+  const [showSidebar, setShowSidebar] = useState<boolean>(true);
 
   return (
-    <div className="h-100 d-flex flex-column justify-content-center align-items-center">
-      <input type="number" value={countries}
+    <div className="h-100 d-flex flex-column">
+      {/* <input type="number" value={countries}
         onChange={e => setCountries(parseInt(e.target.value))}/>
       <br />
       <input type="number" value={categories}
         onChange={e => setCategories(parseInt(e.target.value))}/>
-      <br />
-      <Table countries={countriesData} categories={categoriesData} data={data} />
+      <br /> */}
+      <header className="p-3 d-flex">
+        <i className="fa-solid fa-bars d-flex align-items-center"
+          onClick={_ => setShowSidebar(v => !v)}/>
+        <div className="ms-3 logo">ãcme</div>
+      </header>
+      <div className="h-100 d-flex">
+        {showSidebar && <Sidebar links={[
+          {
+            path: "/",
+            label: "Home",
+            icon: ["solid", "house"]
+          },
+          {
+            path: "/analysis",
+            label: "Analysis",
+            icon: ["solid", "chart-line"],
+            children: [
+              {
+                path: "/survey-report",
+                label: "Survey report"
+              },
+              {
+                path: "/comparison",
+                label: "Comparison",
+              },
+              {
+                path: "/custom-polls",
+                label: "Custom polls"
+              }
+            ]
+          },
+          {
+            path: "/feedback",
+            label: "Feedback",
+            icon: ["solid", "comment"]
+          },
+          {
+            path: "/goals",
+            label: "Goals",
+            icon: ["solid", "bullseye"]
+          }
+        ]} />}
+        <div style={{
+          width: showSidebar ? "calc(100% - 200px)" : "100%"
+        }}>
+          <Outlet />
+        </div>
+      </div>
     </div>
   );
 }
