@@ -13,8 +13,6 @@
                 height: 100%;
             }
         }
-
-        
     }
 }
 
@@ -37,6 +35,7 @@
 .main thead th {
     position: sticky;
     top: 0;
+    
     .category {
         width: 100%;
         background: blue;
@@ -50,7 +49,6 @@
             cursor: pointer;
         }
     }
-
 }
 
 .category {    
